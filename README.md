@@ -172,4 +172,6 @@ In the previous sections, you updated your `README.md` file with your conclusion
 To submit your Challenge assignment, click Submit, and then provide the URL of your GitHub repository for grading.
 
 ## SVM Tune
+* What impact resulted from increasing or decreasing the training window?
 * training end: 48 months
+* What impact resulted from increasing or decreasing either or both of the SMA windows?
