@@ -50,11 +50,6 @@ In this section, you’ll tune, or adjust, the model’s input features to find 
 * <code>short_win = int(months_offset * 30 * 0.17)</code>
 * <code>long_win = int(months_offset * 30 * 0.35)</code>
 
-What impact resulted from increasing or decreasing the training window?
-What impact resulted from increasing or decreasing either or both of the SMA windows?
-
-**Final Difference in Returns: 0.72%**
-
 ### Evaluate a New Machine Learning Classifier
 
 1.  Import a new classifier. `AdaBoost` was chosen.
@@ -65,14 +60,30 @@ What impact resulted from increasing or decreasing either or both of the SMA win
     
 ## Summary
 
+### Baseline SVM Model
+
 ![SVM Baseline Performance](./svm_baseline.png)
+
+This baseline model performed well enough to produce a return that is greater than the actual return of the ETF, however it is not significantly better.
+
+### Tuned SVM Model
 
 ![SVM Tuned Performance](./svm_tuned.png)
 
-This model performed significantly better than the untuned model.
+After tuning, the model performed significantly better than the untuned model. Changing the training window and SMA windows did change the performance of the model, but they did not seem to change it in a linear or a direct manner. For example, increasing or decreasing these values could produce better or worse results while moving one variable in the same direction. For this reason, it was decided to calculate the SMA windows based on the <code>months_offset</code> variable and adjust the calculation parameters to determine the final parameters used by the model.
 
-**Comparison of final returns**
+* <code>months_offset = 24</code>
+* <code>short_win = int(months_offset * 30 * 0.17)</code>
+* <code>long_win = int(months_offset * 30 * 0.35)</code>
+
+Based on these new calculated parameters, the model inputs that produced the best observed results were as follows:
+
+* <code>Training months: 24</code>
+* <code>Window short: 122</code>
+* <code>Window Long: 251</code>
+
+### Alternative Model
 
 ![ADA Performance](./ada.png)
 
-This model produced a return that was better than the baseline model but not significantly better, and it was still well below the performance of the tuned baseline model.
+As analternative the the SVM models used previously, an ADA Boost model was chosen to compare the performance. This model produced a return that was better than the baseline model but not significantly better, and it was still well below the performance of the tuned baseline model.
