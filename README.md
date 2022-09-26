@@ -16,8 +16,6 @@ The speed of these transactions gave your firm a competitive advantage early on.
 
 ### Establish a Baseline Performance
 
-In this section, you’ll run the provided starter code to establish a baseline performance for the trading algorithm. To do so, complete the following steps.
-
 *The provided CSV file contains open, high, low, close, and volume (OHLCV) data for a Morgan Stanley Capital International (MSCI)–based emerging markets exchange-traded fund (ETF) that [iShares](https://www.ishares.com/us/products/268704/ishares-currency-hedged-msci-emerging-markets) issued. Investments in emerging markets make up an important aspect of a well-diversified investment portfolio. That’s because the included equities have potentially higher long-term returns, even though they carry more risk.*
 
 1.  Use the `SVC` classifier model from the SKLearn support vector machine (SVM) learning method to fit the training data and make predictions based on the testing data. Review the predictions.
@@ -33,8 +31,6 @@ In this section, you’ll run the provided starter code to establish a baseline 
 * <code>months_offset = 3</code>
 * <code>short_win = 4</code>
 * <code>long_win = 100</code>
-
-**Final Difference in Returns: 0.13%**
 
 ### Tune the Baseline Trading Algorithm
 
