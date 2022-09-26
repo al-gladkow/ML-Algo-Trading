@@ -66,7 +66,7 @@ This baseline model performed well enough to produce a return that is greater th
 
 ![SVM Tuned Performance](./svm_tuned.png)
 
-After tuning, the model performed significantly better than the untuned model. Changing the training window and SMA windows did change the performance of the model, but they did not seem to change it in a linear or a direct manner. For example, increasing or decreasing these values could produce better or worse results while moving one variable in the same direction. For this reason, it was decided to calculate the SMA windows based on the <code>months_offset</code> variable and adjust the calculation parameters to determine the final parameters used by the model.
+After tuning, the model performed significantly better than the untuned model. Changing the training window and SMA windows did change the performance of the model, but they did not seem to change it in a linear or a direct manner. For example, increasing or decreasing these values could produce better or worse results while moving one variable in the same direction. For this reason, it was decided to calculate the SMA windows based on the <code>months_offset</code> variable and adjust the calculation parameters to determine the final parameters used by the model. To find these values, the <code>months_offset</code> was first increased to include much more data in the training set. This did increase performance, although not significantly. Finally, the multipliers at the end of the SMA window calculations (<code>0.17</code> & <code>0.35</code>) were adjusted and the results were compared. The calculations were:
 
 * <code>months_offset = 24</code>
 * <code>short_win = int(months_offset * 30 * 0.17)</code>
